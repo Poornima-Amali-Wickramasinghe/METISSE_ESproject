@@ -3,12 +3,19 @@
 
 &METISSE_input_controls
 
-METALLICITY_DIR = '/Users/poojan/stellar_tracks/MESA/METISSE_INPUT_FILES/Hydrogen/'
+! METALLICITY_DIR = '/Users/poojan/stellar_tracks/MESA/METISSE_INPUT_FILES/Hydrogen/'
             
-METALLICITY_DIR_HE = '/Users/poojan/stellar_tracks/MESA/METISSE_INPUT_FILES/Helium/'
+! METALLICITY_DIR_HE = '/Users/poojan/stellar_tracks/MESA/METISSE_INPUT_FILES/Helium/'
 
-verbose = .false.
+METALLICITY_DIR = '/home/poornima/Documents/my_METISSE_project/sample_tracks_solarZ/Hydrogen/'
 
+METALLICITY_DIR_HE = '/home/poornima/Documents/my_METISSE_project/sample_tracks_solarZ/Helium/'
+
+
+
+
+verbose = .true.
+/home/poornima/Documents/my_METISSE_project/sample_tracks_solarZ/Helium
 /
 
 
