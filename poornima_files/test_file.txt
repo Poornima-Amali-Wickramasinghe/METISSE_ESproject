@@ -1,2 +1,5 @@
 I did clone the repository and wants to see whether everything works fine.
 Created on 05/02/2026.
+
+Edit: 09/02/2026
+To check configration on my pc
