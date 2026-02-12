@@ -12,9 +12,9 @@ METALLICITY_DIR = '/home/poornima/Documents/my_METISSE_project/sample_tracks_sol
 METALLICITY_DIR_HE = '/home/poornima/Documents/my_METISSE_project/sample_tracks_solarZ/Helium/'
 
 
+Z_accuracy_limit = 3.5d-1  ! default : 1d-2
 
-
-verbose = .false.
+verbose = .true.
 /
 
 
