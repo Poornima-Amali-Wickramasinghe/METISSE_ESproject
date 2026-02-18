@@ -7,5 +7,6 @@ fort.99
 metisse
 source/notebook/run/*
 source/notebook/__pycache__
-#output/evolve*   ### commented by Poornima
+output/evolve*   
+poornima_files/examples_on_website/run/output/evolve*  ##by poornima
 # .gitignore     ### commented by Poornima

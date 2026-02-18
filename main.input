@@ -12,7 +12,7 @@ initial_Z = 0.016
 max_age = 1.2d4   !max age in Myrs
 
 number_of_tracks = 1
-min_mass = 3.d0
+min_mass = 5.d0
 
 write_output_to_file = .true.        !SSE like output file
 /
@@ -27,6 +27,6 @@ write_output_to_file = .true.        !SSE like output file
 !max_mass = 100.d0
 !sampling_scheme = 'Uniform'
 !write_output_to_file = .true.   
-/
+!/
 
 

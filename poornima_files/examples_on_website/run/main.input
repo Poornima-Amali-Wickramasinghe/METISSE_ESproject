@@ -1,10 +1,10 @@
 &SSE_input_controls
     initial_Z = 0.02
     max_age = 20000.0
-    number_of_tracks = 10
+    number_of_tracks = 100
     min_mass = 10.0
-    max_mass = 100.0
-    sampling_scheme = 'Uniform'
+    max_mass = 200.0
+    sampling_scheme = 'Kroupa2001'
     BHNS_mass_scheme = 'Belczynski2008'
     write_output_to_file = .true.
 /
