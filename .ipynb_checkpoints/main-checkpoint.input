@@ -1,0 +1,32 @@
+! NOTE: SSE_input_controls are read only when METISSE is called directly though its main unit.
+! Otherwise, values provided by the overlying code are used.
+! Make sure to ADD a new line at the end (after / symbol)in the inlist
+
+&SSE_input_controls
+
+
+! FOR SINGLE STAR
+
+initial_Z = 0.016
+
+max_age = 1.2d4   !max age in Myrs
+
+number_of_tracks = 1
+min_mass = 5.d0
+
+write_output_to_file = .true.        !SSE like output file
+/
+
+! FOR STELLAR POPULATION
+
+!initial_Z = 0.02
+!max_age = 1.2d4   
+!number_of_tracks = 1d+4
+!number_of_tracks = 1d+1
+!min_mass = 1.d0
+!max_mass = 100.d0
+!sampling_scheme = 'Uniform'
+!write_output_to_file = .true.   
+!/
+
+

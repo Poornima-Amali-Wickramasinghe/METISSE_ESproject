@@ -1,0 +1,20 @@
+! METISSE-specific inputs
+! Make sure to ADD a new line at the end (after / symbol)in the inlist
+
+&METISSE_input_controls
+
+! METALLICITY_DIR = '/Users/poojan/stellar_tracks/MESA/METISSE_INPUT_FILES/Hydrogen/'
+            
+! METALLICITY_DIR_HE = '/Users/poojan/stellar_tracks/MESA/METISSE_INPUT_FILES/Helium/'
+
+METALLICITY_DIR = '/home/poornima/Documents/my_METISSE_project/sample_tracks_solarZ/Hydrogen/'
+
+METALLICITY_DIR_HE = '/home/poornima/Documents/my_METISSE_project/sample_tracks_solarZ/Helium/'
+
+
+Z_accuracy_limit = 3.5d-1  ! default : 1d-2
+
+verbose = .true.
+/
+
+

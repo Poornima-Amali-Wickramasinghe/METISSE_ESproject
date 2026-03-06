@@ -9,7 +9,7 @@
 
     total_cols = 94 !number of columns
     !column_name_file = '/Users/poojan/stellar_tracks/Boost/boost_columns.txt'
-    column_name_file = '/home/poornima/Documents/my_METISSE_project/BoOST-stellarmodels-MW/fdat-columns.txt'
+    column_name_file = '/home/poornima/Documents/my_METISSE_project/BoOST/BoOST-stellarmodels-MW/fdat-columns.txt'
 
     !EEPS
     ZAMS_EEP = 1
