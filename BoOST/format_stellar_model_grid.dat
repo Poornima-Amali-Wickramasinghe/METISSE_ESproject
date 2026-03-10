@@ -5,11 +5,12 @@
     read_eep_files = .false.
 
     !the line number where column names are listed
-    header_location = -1
+    header_location = -1 
 
-    total_cols = 94 !number of columns
+    total_cols = 94              !number of columns
     !column_name_file = '/Users/poojan/stellar_tracks/Boost/boost_columns.txt'
-    column_name_file = '/home/poornima/Documents/my_METISSE_project/BoOST/BoOST-stellarmodels-MW/fdat-columns.txt'
+    !column_name_file = '/home/poornima/Documents/my_METISSE_project/BoOST/BoOST-stellarmodels-MW/fdat_columns.txt'
+    column_name_file = '/home/poornima/Documents/my_METISSE_project/BoOST/BoOST-stellarmodels-MW/BoOST_col.txt'
 
     !EEPS
     ZAMS_EEP = 1
@@ -19,6 +20,8 @@
     cHeIgnition_EEP = 403
     cHeBurn_EEP = 429
     TA_cHeB_EEP = 608
+
+    !TPAGB_EEP = 608 ! added by Poornima
 
     Initial_EEP = 1       !files will be read from this line number
     Final_EEP = 608        !to this line  
