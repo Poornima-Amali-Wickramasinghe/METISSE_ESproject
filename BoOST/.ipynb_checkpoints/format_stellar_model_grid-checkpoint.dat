@@ -21,7 +21,7 @@
     cHeBurn_EEP = 429
     TA_cHeB_EEP = 608
 
-    !TPAGB_EEP = 608 ! added by Poornima
+    TPAGB_EEP = 607 ! added by Poornima
 
     Initial_EEP = 1       !files will be read from this line number
     Final_EEP = 608        !to this line  

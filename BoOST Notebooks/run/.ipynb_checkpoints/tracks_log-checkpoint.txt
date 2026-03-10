@@ -1,4 +1,0 @@
- Warning: METALLICITY_DIR_HE/path_to_he_tracks is an empty string
- Switching to SSE formulae for helium stars 
- Input Z is :  2.00000E-02
- Reading main (hydrogen star) tracks

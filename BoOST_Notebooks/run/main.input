@@ -1,0 +1,11 @@
+&SSE_input_controls
+    initial_Z = 0.008
+    max_age = 20000.0
+    number_of_tracks = 10
+    min_mass = 10.0
+    max_mass = 100.0
+    sampling_scheme = 'Uniform'
+    BHNS_mass_scheme = 'Belczynski2008'
+    write_output_to_file = .true.
+/
+ 

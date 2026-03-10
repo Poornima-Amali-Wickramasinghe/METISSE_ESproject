@@ -110,12 +110,14 @@ def run_metisse(run_dir,main_params,metisse_params):
     path = Path(os.path.join(run_dir, "metisse.input"))
     text = inlist_content('&METISSE_input_controls',metisse_params)
     path.write_text(text)
-
+    
+    
     # Compose and write the main.input namelist
     path = Path(os.path.join(run_dir, "main.input"))
     text = inlist_content('&SSE_input_controls',main_params)
     path.write_text(text)
-                 
+
+    
     proc = subprocess.Popen([(METISSE_EXE)],
                             cwd=str(run_dir),
                             shell=True,
@@ -125,7 +127,7 @@ def run_metisse(run_dir,main_params,metisse_params):
     # Stream stdout line-by-line.
     for line in iter(proc.stdout.readline, ''):
         print(line, end='')
-
+    
     # Wait for the process to finish
     proc.wait()
 

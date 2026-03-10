@@ -1,6 +1,0 @@
- Input Z is :  8.00000E-03
- Reading naked helium star tracks
- Found matching Z_files   8.00000E-03
- Found           10  tracks.
- Minimum initial mass    8.6
- Maximum initial mass  166.3
