@@ -377,6 +377,7 @@ module track_support
             loc = loc+minloc(abs(list-val), dim = 1)-2
 !            print*,'loc',minloc(abs(list-val), dim = 1)
         endif
+        print*, 'function binary_search executed' ! Poornima
     end function binary_search
     
     subroutine stop_code(i)
@@ -525,6 +526,8 @@ module track_support
                 exit
             endif
         enddo
+
+        print*, 'function bgb_mcenv executed' ! Poornima
     end function
     
     integer function base_GB(t) result(j_bgb)
@@ -596,7 +599,7 @@ module track_support
 
         deallocate(diff_L, diff_Te, dLdTe)
         deallocate(Lum, Teff, core_mass)
-        
+        print*, 'function base_GB executed' ! Poornima
     end function
 
     subroutine distance_along_track(t)
@@ -638,18 +641,24 @@ module track_support
       real(dp):: y, dx
       dx = x0-x1
       y = dx*dx
+
+      !print*, 'function sqdiff executed' ! Poornima
     end function sqdiff
     
     elemental function pow10_sg(x) result(y)
         real(sp), intent(in):: x
         real(sp):: y
         y = exp(ln10_sp*x)
+
+        !print*, 'function pow10_sg executed' ! Poornima
     end function pow10_sg
 
     elemental function pow10(x) result(y)
         real(dp), intent(in):: x
         real(dp):: y
         y = exp(ln10*x)
+
+        !print*, 'function pow10 executed' ! Poornima
     end function pow10
     
     !from mesa/utils_lib.f
@@ -669,6 +678,8 @@ module track_support
         if (alloc_iounit == -1) then
             ierr = -1
         end if
+
+        print*, 'function alloc_iounit executed' ! Poornima
     end function alloc_iounit
 
     subroutine free_iounit(iounit)
@@ -698,7 +709,8 @@ module track_support
         else
             z = .false.
         endif
-        return
+        print*, 'function check_ge executed' ! Poornima
+        return        
     end function check_ge
     
     logical function check_le(x, y) result(z)
@@ -709,6 +721,7 @@ module track_support
             z = .false.
         endif
         return
+        print*, 'function check_le executed' ! Poornima
     end function check_le
     
     logical function check_equal(x, y, limit) result(z)
@@ -727,6 +740,7 @@ module track_support
         else
             z = .false.
         endif
+        print*, 'function check_equal executed' ! Poornima
     end function check_equal
 
     logical function defined(x) result(y)
@@ -736,7 +750,9 @@ module track_support
         else
             y = .true.
         endif
+        print*, 'function defind executed' ! Poornima
     return
+        
     end function defined
 
     !same as the function 'defined' above but for integers
@@ -748,6 +764,7 @@ module track_support
         else
             y = .true.
         endif
+        print*, 'function identified executed' ! Poornima
         return
     end function identified
 
@@ -770,6 +787,7 @@ module track_support
         else
             x = -B/(2*A)
         endif
+        print*, 'function quadratic executed' ! Poornima
     end function quadratic
     
     subroutine deallocate_arrays(t)
@@ -803,6 +821,6 @@ module track_support
                 get_min_ntrack = low_mass_final_eep
             endif
         endif
-        
+        print*, 'function get_min_ntrack executed' ! Poornima
     end function
 end module track_support
