@@ -43,6 +43,7 @@ def compile_metisse(METISSE_DIR,run_dir,clean=True):
                             cwd=METISSE_DIR,
                             stdout=subprocess.PIPE,
                             shell=True, text=True)
+    ###print("def compile_metisse executed")
     
     return 
 

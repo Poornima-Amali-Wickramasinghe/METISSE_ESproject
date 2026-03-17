@@ -412,6 +412,6 @@ subroutine METISSE_zcnsts(z, zpars, ierr)
 
     if (debug) print*, 'Finished in zcsnts'
 
-        
+    print*, 'subroutine METISSE_zcnsts executed' ! Poornima     
 end subroutine METISSE_zcnsts
 

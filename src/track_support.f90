@@ -285,7 +285,7 @@ module track_support
         else
             min_index = binary_search(size_list, list, value)
         endif
-        
+        print*, 'subroutine index_search executed' ! Poornima    
         
     end subroutine index_search
 
@@ -392,6 +392,7 @@ module track_support
         else
             STOP 1
         endif
+        print*, 'subroutine stop_code executed' ! Poornima
     end subroutine stop_code
     
     subroutine write_eep_track(x, mt, filename)
@@ -444,6 +445,7 @@ module track_support
     deallocate(phase)
     close(io)
     call free_iounit(io)
+    print*, 'subroutine write_eep_track executed' ! Poornima
     end subroutine write_eep_track
 
     subroutine calculate_sse_phases(t, phase)
@@ -505,6 +507,8 @@ module track_support
                 end if
             endif
         endif
+        
+    print*, 'subroutine calculate_sse_phases executed' ! Poornima
     end subroutine
     
     integer function bgb_mcenv(t, jstart, jend) result(j_bgb)
@@ -626,6 +630,7 @@ module track_support
 !            t% dist(j) = t% dist(j-1) + sqrt(tmp_dist)
          enddo
       endif
+      print*, 'subroutine distance_along_track executed' ! Poornima
     end subroutine distance_along_track
 
     elemental function sqdiff(x0, x1) result(y)  ! square of x, y = x*x
@@ -682,6 +687,7 @@ module track_support
             write(*,*) 'called free_iounit with invalid arg', iounit
             stop 'free_iounit'
         end if
+        print*, 'subroutine free_iounit executed' ! Poornima
     end subroutine free_iounit
     
     
@@ -772,6 +778,7 @@ module track_support
         deallocate(t% tr)
 !        deallocate(t% times)
         deallocate(t% cols)
+    print*, 'subroutine deallocate_arrays executed' ! Poornima    
 
     end subroutine deallocate_arrays
     
