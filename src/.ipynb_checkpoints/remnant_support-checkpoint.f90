@@ -41,7 +41,7 @@
             t% ierr = -1
 !                    call stop_code
         endif
-            
+        print*, 'subroutine check_early_end executed' ! Poornima    
     end subroutine check_early_end
             
     
@@ -87,6 +87,8 @@
             endif
         endif
         if (debug_rem .and. pars% phase>9) print*,"Assigned remnant phase ", phase_label(pars% phase+1)
+
+        print*, 'subroutine assign_remnant_METISSE executed' ! Poornima
     
     end subroutine assign_remnant_METISSE
 
@@ -109,6 +111,7 @@
         call evolve_after_agb(t)
         if (debug_rem) print*, "In post-agb phase, mass = ", t% pars% mass
         
+        print*, 'subroutine post_agb_parameters  executed' ! Poornima
     end subroutine post_agb_parameters
 
     subroutine evolve_after_agb(t)
@@ -157,6 +160,8 @@
             t% pars% phase = t% agb% phase_wd
             t% zams_mass = t% pars% mass
         endif
+
+        print*, 'subroutine evolve_after_agb executed' ! Poornima
     end subroutine
 
     subroutine initialize_white_dwarf(pars)
@@ -170,6 +175,7 @@
 
         call evolve_white_dwarf(pars)
         if (debug_rem) print*, phase_label(pars% phase+1), ", mass =", pars% mass
+        print*, 'subroutine initialize_white_dwarf executed' ! Poornima
     end subroutine
 
     subroutine check_IFMR(mass, mc)
@@ -186,6 +192,7 @@
              mc= MAX(0.54+0.073*mass,mc)
           endif
           mc= MIN(M_ch,mc)
+          print*, 'subroutine check_IFMR executed' ! Poornima
     end subroutine
 
     subroutine check_ns_bh(pars)
@@ -208,6 +215,7 @@
 
         endif
         if (debug_rem) print*, "NS/BH mass from ", trim(BHNS_mass_scheme)," scheme = ",pars% mass
+         print*, 'subroutine check_ns_bh executed' ! Poornima
     end subroutine
 
     real(dp) function calculate_NSBH_mass(Mc,Mt) result(Mrem)
@@ -252,6 +260,7 @@
                 !Use the original SSE NS/BH mass.
                 Mrem = 1.17d0 + 0.09d0*Mc
         end select
+         print*, 'function calculate_NSBH_mass executed' ! Poornima
     end function
 
     real(dp) function calculate_remnant_mass(mc,mcfeni,Mt) result (Mrem)
@@ -279,6 +288,7 @@
             mt = mass
         endif
         calculate_gravitational_mass = mt
+        print*, 'function calculate_gravitational_mass executed' ! Poornima
     end function
     
     subroutine evolve_remnants_METISSE(pars)
@@ -294,6 +304,7 @@
         case(Massless_Rem)
             call initialize_massless_rem(pars)
         end select
+        print*, 'evolve_remnants_METISSE executed' ! Poornima
     end subroutine
             
     subroutine evolve_white_dwarf(pars)
