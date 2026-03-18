@@ -275,6 +275,7 @@
         else
             Mrem = Mt
         endif
+        print*, 'function calculate_remnant_mass executed' ! Poornima
     end function calculate_remnant_mass
 
     real(dp) function calculate_gravitational_mass(mass,phase)
@@ -339,6 +340,7 @@
             if(pars% mass < 0.0005) pars% radius= MIN(pars% radius,0.01d0)
             if (debug) print*, "Evolving WD", pars% mass, pars% luminosity, pars% radius
         endif
+        print*, 'subroutine evolve_white_dwarf executed' ! Poornima
     end subroutine
 
     real(dp) function calculate_wd_lum(mass,age,xx) result(lum)
@@ -360,6 +362,7 @@
         !tmin= ((635.d0*pars% mass*Z04/lum)**(1.0/1.4))/xx
         !lum = (635.d0*mass*(Z04))/((xx*tmin)**1.4)
         !if (t% post_agb) lum = min(lum,t% agb% lum)
+        print*, 'function calculate_wd_lum executed' ! Poornima
     end function
 
     real(dp) function calculate_wd_radius(mass) result(radius)
@@ -368,6 +371,7 @@
         radius = max(1.4d-5,0.0115*radius)
         !radius  = 0.0115*SQRT(MAX(1.48204d-06,(M_ch/mass)**pow-(mass/M_ch)**pow))
         radius = MIN(0.1d0,radius )
+        print*, 'function calculate_wd_radius executed' ! Poornima
     end function
 
     subroutine evolve_neutron_star(pars)
@@ -387,6 +391,7 @@
         endif
         
         !print*,"I am in evolve_neutron_star"
+        print*, 'subroutine evolve_neutron_star executed' ! Poornima
     end subroutine
 
     subroutine evolve_black_hole(pars)
@@ -398,6 +403,8 @@
         pars% radius = 4.24d-06*pars% mass
         !pars% McCO = 0.0
         !pars% McHe = 0.0
+
+        print*, 'subroutine evolve_black_hole executed' ! Poornima
 
     end subroutine
 
@@ -411,6 +418,8 @@
         pars% core_mass = 0.d0
         pars% McCO = 0.d0
         pars% McHe = 0.d0
+
+        print*, 'subroutine initialize_massless_rem executed' ! Poornima
     end subroutine
 
     subroutine initialize_ECSNe(pars)
@@ -421,6 +430,7 @@
         pars% core_mass= pars% mass
         pars% luminosity = 0.02*(pars% mass**0.67)/(MAX(pars% age,0.1d0))**2
         pars% radius= 1.4d-05
+        print*, 'subroutine initialize_ECSNe executed' ! Poornima
     end subroutine
     
     subroutine initialize_SSE_helium_star(t,HeI_time)
@@ -437,7 +447,7 @@
                             t% times(9),t% He_pars% D, t% He_pars% Mx)
             t% pars% age = MAX(t% pars% age,t% MS_time)
         endif
-        
+        print*, 'subroutine initialize_SSE_helium_star executed' ! Poornima
     end subroutine
     
     
@@ -486,7 +496,7 @@
                 t% pars% core_mass = t% pars% mass
                 
         end select
-        
+        print*, 'subroutine assign_stripped_star_phase executed' ! Poornima
     end subroutine
 
     subroutine evolve_after_envelope_loss(t,McHeI)
@@ -535,6 +545,8 @@
 
     if (debug) print*,"End: Phase",t% pars% phase ," core mass",t% pars% core_mass
 !        print*,"lum", t% pars% luminosity, "rad", t% pars% radius
+
+    print*, 'subroutine evolve_after_envelope_loss executed' ! Poornima
     end subroutine evolve_after_envelope_loss
 
 
@@ -544,6 +556,7 @@
         x = log10(Z)
         !y = 10**(-0.1*x*x-0.46*x-5.1)
         fit_Z_t1 = 10**(-0.136*x*x-1.117*x-6.256)
+        print*, 'function fit_Z_t1 executed' ! Poornima
         return
     end function
 
@@ -600,6 +613,8 @@
              endif
          end select
         rc = MIN(rc,t% pars% radius)
+
+        print*, 'subroutine calculate_rc executed' ! Poornima
     end subroutine calculate_rc
 
     subroutine calculate_rg(t,rg)
@@ -668,6 +683,8 @@
                     
                 ENDIF
         end select
+
+        print*, 'subroutine calculate_rg executed' ! Poornima
     end subroutine calculate_rg
     
     subroutine get_mcrenv_from_cols(t,lums,menv,renv,k2)
@@ -735,6 +752,8 @@
 !        setting k2 to 0.1 following equation 35 of hurley et al. 2002
         
         k2 = 0.1d0
+
+        print*, 'subroutine get_mcrenv_from_cols executed' ! Poornima
     
     end subroutine
 
