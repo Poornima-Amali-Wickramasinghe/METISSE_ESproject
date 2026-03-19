@@ -1,0 +1,70 @@
+program metisse_main started
+subroutine initialize_front_end executed
+function alloc_iounit executed  (x132)
+subroutine free_iounit executed  (x131)
+subroutine read_main_input executed
+function defind executed  (x5686)
+subroutine read_metisse_input executed
+subroutine get_files_from_path executed  (x4)
+subroutine get_metallicity_file_list executed  (x2)
+subroutine read_metallicity_file executed  (x4)
+subroutine get_metallicity_list executed  (x2)
+subroutine get_metallicity_file_from_Z executed  (x2)
+subroutine read_format executed  (x2)
+function add_eep executed  (x19)
+subroutine read_key_eeps_he executed
+subroutine get_named_columns executed  (x2)
+subroutine set_star_type_from_history executed  (x48)
+subroutine read_MIST_track executed  (x118)
+subroutine check_tracks executed  (x2)
+subroutine sort_minitial executed  (x2)
+function check_equal executed  (x933)
+function binary_search executed  (x925)
+subroutine index_search executed  (x925)
+subroutine sort_mcutoff executed  (x2)
+subroutine set_zparameters_he executed
+subroutine assign_sgl_col executed  (x21)
+subroutine check_for_extra_columns executed  (x2)
+subroutine set_key_columns executed  (x2)
+function check_mass_loss executed  (x118)
+subroutine copy_and_deallocatex executed  (x2)
+subroutine get_minmax executed  (x2)
+subroutine read_key_eeps executed
+subroutine calculate_sse_zpars executed
+subroutine set_zparameters executed
+Output folder created successfully.
+subroutine METISSE_zcnsts executed
+subroutine assign_commons_main executed
+subroutine allocate_track executed
+subroutine findtracks_for_interpolation executed
+subroutine write_header executed
+subroutine interp_4pt_pm executed  (x6677)
+function get_min_ntrack executed
+subroutine mod_PAV executed
+subroutine smooth_track executed
+subroutine interpolate_mass executed
+subroutine calculate_timescales executed
+subroutine calculate_SSE_tscls executed
+subroutine calculate_SSE_GB executed
+subroutine calculate_SSE_lums executed
+subroutine calculate_SSE_parameters executed
+subroutine METISSE_star executed
+function get_secondary_age executed  (x923)
+subroutine find_neighboring_eeps executed  (x923)
+subroutine save_values executed  (x923)
+subroutine interpolate_age executed  (x923)
+function check_ge executed  (x1845)
+subroutine get_mcrenv_from_cols executed  (x922)
+subroutine METISSE_hrdiag executed  (x20896)
+subroutine METISSE_deltat executed  (x20895)
+function calculate_remnant_mass executed
+function calculate_NSBH_mass executed
+function quadratic executed
+function calculate_gravitational_mass executed
+subroutine evolve_neutron_star executed  (x19975)
+subroutine check_ns_bh executed
+subroutine assign_remnant_METISSE executed
+subroutine evolve_remnants_METISSE executed  (x19974)
+subroutine evolv_metisse executed
+subroutine dealloc_track executed
+program metisse_main executed
