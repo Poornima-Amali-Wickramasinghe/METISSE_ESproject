@@ -111,7 +111,7 @@
         call evolve_after_agb(t)
         if (debug_rem) print*, "In post-agb phase, mass = ", t% pars% mass
         
-        print*, 'subroutine post_agb_parameters  executed' ! Poornima
+        print*, 'subroutine post_agb_parameters executed' ! Poornima
     end subroutine post_agb_parameters
 
     subroutine evolve_after_agb(t)
@@ -305,7 +305,7 @@
         case(Massless_Rem)
             call initialize_massless_rem(pars)
         end select
-        print*, 'evolve_remnants_METISSE executed' ! Poornima
+        print*, 'subroutine evolve_remnants_METISSE executed' ! Poornima
     end subroutine
             
     subroutine evolve_white_dwarf(pars)

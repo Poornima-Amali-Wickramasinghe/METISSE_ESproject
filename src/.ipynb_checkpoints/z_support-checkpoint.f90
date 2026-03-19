@@ -82,6 +82,7 @@ module z_support
             
         close(io)
         call free_iounit(io)
+        print*, ' subroutine read_main_input executed' ! Poornima
     end subroutine
 
     subroutine read_metisse_input(infile,ierr)
@@ -100,6 +101,7 @@ module z_support
             read(unit = io, nml = METISSE_input_controls)
         close(io)
         call free_iounit(io)
+        print*, ' subroutine read_metisse_input executed' ! Poornima
     end subroutine read_metisse_input
     
     subroutine get_test_inputs()
@@ -113,6 +115,8 @@ module z_support
         METALLICITY_DIR = '/home/runner/data/sample_tracks_solarZ/Hydrogen/'
         METALLICITY_DIR_HE = '/home/runner/data/sample_tracks_solarZ/Helium/'
         verbose = .true.
+        print*, ' subroutine get_test_inputs executed' ! Poornima
+        
 
     end subroutine
 
