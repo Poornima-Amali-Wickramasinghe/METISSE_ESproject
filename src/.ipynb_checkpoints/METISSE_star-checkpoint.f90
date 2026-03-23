@@ -250,7 +250,7 @@ subroutine METISSE_star(kw, mass, mt, tm, tn, tscls, lums, GB, zpars, dtm, id)
 
     nullify(t)
 
-    print*, 'subroutine METISSE_star executed' ! Poornima
+    !print*, 'subroutine METISSE_star executed' ! Poornima
     return
 end subroutine METISSE_star
 

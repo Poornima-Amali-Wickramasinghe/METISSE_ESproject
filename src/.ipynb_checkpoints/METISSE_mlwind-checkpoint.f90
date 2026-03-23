@@ -75,6 +75,6 @@ real(dp) function metisse_mlwind(kw,lum,r,mt,mc,rl,z,id)
     metisse_mlwind = dms
     
     nullify(t)
-    print*, 'function metisse_mlwind executed' ! Poornima
+    !print*, 'function metisse_mlwind executed' ! Poornima
 end function
 

@@ -285,7 +285,7 @@ module track_support
         else
             min_index = binary_search(size_list, list, value)
         endif
-        print*, 'subroutine index_search executed' ! Poornima    
+        !print*, 'subroutine index_search executed' ! Poornima    
         
     end subroutine index_search
 
@@ -377,7 +377,7 @@ module track_support
             loc = loc+minloc(abs(list-val), dim = 1)-2
 !            print*,'loc',minloc(abs(list-val), dim = 1)
         endif
-        print*, 'function binary_search executed' ! Poornima
+        !print*, 'function binary_search executed' ! Poornima
     end function binary_search
     
     subroutine stop_code(i)
@@ -393,7 +393,7 @@ module track_support
         else
             STOP 1
         endif
-        print*, 'subroutine stop_code executed' ! Poornima
+        !print*, 'subroutine stop_code executed' ! Poornima
     end subroutine stop_code
     
     subroutine write_eep_track(x, mt, filename)
@@ -446,7 +446,7 @@ module track_support
     deallocate(phase)
     close(io)
     call free_iounit(io)
-    print*, 'subroutine write_eep_track executed' ! Poornima
+    !print*, 'subroutine write_eep_track executed' ! Poornima
     end subroutine write_eep_track
 
     subroutine calculate_sse_phases(t, phase)
@@ -509,7 +509,7 @@ module track_support
             endif
         endif
         
-    print*, 'subroutine calculate_sse_phases executed' ! Poornima
+    !print*, 'subroutine calculate_sse_phases executed' ! Poornima
     end subroutine
     
     integer function bgb_mcenv(t, jstart, jend) result(j_bgb)
@@ -527,7 +527,7 @@ module track_support
             endif
         enddo
 
-        print*, 'function bgb_mcenv executed' ! Poornima
+        !print*, 'function bgb_mcenv executed' ! Poornima
     end function
     
     integer function base_GB(t) result(j_bgb)
@@ -599,7 +599,7 @@ module track_support
 
         deallocate(diff_L, diff_Te, dLdTe)
         deallocate(Lum, Teff, core_mass)
-        print*, 'function base_GB executed' ! Poornima
+        !print*, 'function base_GB executed' ! Poornima
     end function
 
     subroutine distance_along_track(t)
@@ -633,7 +633,7 @@ module track_support
 !            t% dist(j) = t% dist(j-1) + sqrt(tmp_dist)
          enddo
       endif
-      print*, 'subroutine distance_along_track executed' ! Poornima
+      !print*, 'subroutine distance_along_track executed' ! Poornima
     end subroutine distance_along_track
 
     elemental function sqdiff(x0, x1) result(y)  ! square of x, y = x*x
@@ -679,7 +679,7 @@ module track_support
             ierr = -1
         end if
 
-        print*, 'function alloc_iounit executed' ! Poornima
+        !print*, 'function alloc_iounit executed' ! Poornima
     end function alloc_iounit
 
     subroutine free_iounit(iounit)
@@ -698,7 +698,7 @@ module track_support
             write(*,*) 'called free_iounit with invalid arg', iounit
             stop 'free_iounit'
         end if
-        print*, 'subroutine free_iounit executed' ! Poornima
+        !print*, 'subroutine free_iounit executed' ! Poornima
     end subroutine free_iounit
     
     
@@ -709,7 +709,7 @@ module track_support
         else
             z = .false.
         endif
-        print*, 'function check_ge executed' ! Poornima
+        !print*, 'function check_ge executed' ! Poornima
         return        
     end function check_ge
     
@@ -721,7 +721,7 @@ module track_support
             z = .false.
         endif
         return
-        print*, 'function check_le executed' ! Poornima
+        !print*, 'function check_le executed' ! Poornima
     end function check_le
     
     logical function check_equal(x, y, limit) result(z)
@@ -740,7 +740,7 @@ module track_support
         else
             z = .false.
         endif
-        print*, 'function check_equal executed' ! Poornima
+        !print*, 'function check_equal executed' ! Poornima
     end function check_equal
 
     logical function defined(x) result(y)
@@ -750,7 +750,7 @@ module track_support
         else
             y = .true.
         endif
-        print*, 'function defind executed' ! Poornima
+        !print*, 'function defind executed' ! Poornima
     return
         
     end function defined
@@ -764,7 +764,7 @@ module track_support
         else
             y = .true.
         endif
-        print*, 'function identified executed' ! Poornima
+        !print*, 'function identified executed' ! Poornima
         return
     end function identified
 
@@ -787,7 +787,7 @@ module track_support
         else
             x = -B/(2*A)
         endif
-        print*, 'function quadratic executed' ! Poornima
+        !print*, 'function quadratic executed' ! Poornima
     end function quadratic
     
     subroutine deallocate_arrays(t)
@@ -796,7 +796,7 @@ module track_support
         deallocate(t% tr)
 !        deallocate(t% times)
         deallocate(t% cols)
-    print*, 'subroutine deallocate_arrays executed' ! Poornima    
+    !print*, 'subroutine deallocate_arrays executed' ! Poornima    
 
     end subroutine deallocate_arrays
     
@@ -821,6 +821,6 @@ module track_support
                 get_min_ntrack = low_mass_final_eep
             endif
         endif
-        print*, 'function get_min_ntrack executed' ! Poornima
+        !print*, 'function get_min_ntrack executed' ! Poornima
     end function
 end module track_support

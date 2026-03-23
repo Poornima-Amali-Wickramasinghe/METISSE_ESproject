@@ -116,5 +116,5 @@
             if(t% ierr<0) code_error = .true.
 
             nullify(t)
-            print*, 'subroutine METISSE_deltat executed' ! Poornima
+            !print*, 'subroutine METISSE_deltat executed' ! Poornima
       end subroutine METISSE_deltat

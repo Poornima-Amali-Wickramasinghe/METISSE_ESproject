@@ -36,5 +36,5 @@ subroutine comenv_lambda(KW,M0,L,R,MENVD,LAMBDA,id,LAMBF)
     !comenv_lambda = LAMBF
 
     nullify(t)
-    print*, 'subroutine comenv_lambda executed' ! Poornima
+    !print*, 'subroutine comenv_lambda executed' ! Poornima
 end subroutine comenv_lambda

@@ -403,7 +403,7 @@ subroutine METISSE_zcnsts(z, zpars, ierr)
 
     if (ierr/=0) then
         print*, 'METISSE error: cannot create output folder.'
-        print*, "ierr num =", ierr  ! added by Poornima
+        !print*, "ierr num =", ierr  ! added by Poornima
         
         return
     else                                              ! added by Poornima
@@ -412,6 +412,6 @@ subroutine METISSE_zcnsts(z, zpars, ierr)
 
     if (debug) print*, 'Finished in zcsnts'
 
-    print*, 'subroutine METISSE_zcnsts executed' ! Poornima     
+    !print*, 'subroutine METISSE_zcnsts executed' ! Poornima     
 end subroutine METISSE_zcnsts
 

@@ -23,7 +23,7 @@ module sse_support
         call calculate_SSE_lums(t, lums)
         lums(6) = GB(4)*GB(7)**GB(5)
 
-        print*, 'subroutine calculate_SSE_parameters executed' ! Poornima
+        !print*, 'subroutine calculate_SSE_parameters executed' ! Poornima
     end subroutine calculate_SSE_parameters
     
     !TSCLS (all timescales are in Myr units)
@@ -65,7 +65,7 @@ module sse_support
     tscls(10) = min(tn,tscls(13))
     tscls(11) = tscls(10)
     tscls(12) = tscls(10)
-    print*, 'subroutine calculate_SSE_tscls executed' ! Poornima
+    !print*, 'subroutine calculate_SSE_tscls executed' ! Poornima
     end subroutine
 
    ! LUMS (all luminosities are in solar units)
@@ -93,7 +93,7 @@ module sse_support
     if (t% j_bgb0 >1) lums(3) = t% tr(i_logL,t% j_bgb0)
 
     lums = 10**lums
-    print*, 'subroutine calculate_SSE_lums executed' ! Poornima
+    !print*, 'subroutine calculate_SSE_lums executed' ! Poornima
     end subroutine
 
     ! GB = giant branch parameters
@@ -145,7 +145,7 @@ module sse_support
             j = min(t% ntrack, cHeIgnition_EEP)
             GB(9) = t% tr(i_he_core, j )
       endif
-      print*, 'subroutine calculate_SSE_GB executed' ! Poornima
+      !print*, 'subroutine calculate_SSE_GB executed' ! Poornima
     end subroutine
 
     subroutine calculate_SSE_He_star(t,tscls,lums,GB,tm,tn)
@@ -172,7 +172,7 @@ module sse_support
         tm = t% MS_time
         tn = t% nuc_time
 
-        print*, 'subroutine calculate_SSE_He_star executed' ! Poornima
+        !print*, 'subroutine calculate_SSE_He_star executed' ! Poornima
     end subroutine calculate_SSE_He_star
     
 !     subroutine calculate_he_timescales(t,t% He_pars% LtMS, Mx, Tinf1, Tx, Tinf2)
@@ -240,7 +240,7 @@ module sse_support
         t% times(10) = Tx
         if(debug) print*,"He timescales", tinf1, tx, tinf2, tmax,t% MS_time,t% nuc_time
 
-        print*, 'subroutine calculate_SSE_He_timescales executed' ! Poornima
+        !print*, 'subroutine calculate_SSE_He_timescales executed' ! Poornima
     end subroutine calculate_SSE_He_timescales
 
     real(dp) FUNCTION lum_He_ZAMS(m)
@@ -253,7 +253,7 @@ module sse_support
         top = 1.5262d+04*m**(41.d0/4.d0)
         bottom = 0.0469d0 + 31.18d0*m**6 + 29.54d0*m**7.5 + m**9
         lum_He_ZAMS= top/bottom
-        print*, 'FUNCTION lum_He_ZAMS executed' ! Poornima
+        !print*, 'FUNCTION lum_He_ZAMS executed' ! Poornima
     return
     end
 
@@ -265,7 +265,7 @@ module sse_support
         top = 0.2391*m**4.6
         bottom = 0.0065 + 0.162*m**3 + m**4
         radius_He_ZAMS = top/bottom
-        print*, 'FUNCTION radius_He_ZAMS executed' ! Poornima
+        !print*, 'FUNCTION radius_He_ZAMS executed' ! Poornima
     return
     end
 
@@ -278,7 +278,7 @@ module sse_support
         top = 0.4129d0 + 18.81d0*m**4 + 1.853d0*m**6
         bottom = m**6.5d0
         time_He_MS = top/bottom
-        print*, 'FUNCTION time_He_MS executed' ! Poornima
+        !print*, 'FUNCTION time_He_MS executed' ! Poornima
         return
     end
     !themsf = (0.4129d0 + 18.81d0*m**4 + 1.853d0*m**6)/m**(13.d0/2.d0)
@@ -294,7 +294,7 @@ module sse_support
 
         alpha = MAX(0.d0,0.85d0-0.08d0*mass)
         lum_He_MS = lum *(1.d0+ 0.45d0*tau+ alpha*tau**2)
-        print*, 'FUNCTION lum_He_MS executed' ! Poornima
+        !print*, 'FUNCTION lum_He_MS executed' ! Poornima
     return
     end
 
@@ -307,7 +307,7 @@ module sse_support
 
         beta = MAX(0.d0,0.4d0-0.22d0*LOG10(mass))
         radius_He_MS = radius *(1.d0+beta*(tau-tau**6))
-        print*, 'FUNCTION radius_He_MS executed' ! Poornima
+        !print*, 'FUNCTION radius_He_MS executed' ! Poornima
     return
     end
 
@@ -321,7 +321,7 @@ module sse_support
 
         cm = 2.0d-03*m**(5.d0/2.d0)/(2.d0 + m**5)   !1/lambda
         radius_He_HG = rx*(lum/lum2)**0.2+0.02*(EXP(cm*lum)-EXP(cm*lum2))
-        print*, 'FUNCTION radius_He_HG executed' ! Poornima
+        !print*, 'FUNCTION radius_He_HG executed' ! Poornima
 
     return
     end
@@ -331,7 +331,7 @@ module sse_support
     real(dp) lum
     !rhegbf: A function to evaluate Helium star radius on the giant branch.
         radius_He_GB = 0.08d0*lum**(3.d0/4.d0)
-        print*, 'FUNCTION radius_He_GB executed' ! Poornima
+        !print*, 'FUNCTION radius_He_GB executed' ! Poornima
     return
     end
 
@@ -346,7 +346,7 @@ module sse_support
         else
          lum_He_GB = B*((q-1.0)*AHe*B*(Tinf2-age))**(q/(1.0-q))
         endif
-        print*, 'FUNCTION lum_He_HG executed' ! Poornima
+        !print*, 'FUNCTION lum_He_HG executed' ! Poornima
     return
     end
 
@@ -362,7 +362,7 @@ module sse_support
           else
              core_mass_He_GB = (lum/B)**(1.d0/q)
           endif
-          print*, 'FUNCTION core_mass_He_GB executed' ! Poornima
+          !print*, 'FUNCTION core_mass_He_GB executed' ! Poornima
     end
 
     real(dp) FUNCTION max_core_mass_he(mt,mass)
@@ -373,7 +373,7 @@ module sse_support
         mtc = MIN(mt,1.45d0*mt-0.31d0)
         if(mtc <= 0.d0) mtc = mt
         max_core_mass_he = MIN(mtc,MAX(M_ch,0.773d0*mass-0.35d0))
-        print*, 'FUNCTION max_core_mass_he executed' ! Poornima
+        !print*, 'FUNCTION max_core_mass_he executed' ! Poornima
     end
 
     real(dp) FUNCTION He_GB_age(mc,Tinf1,Tinf2,D,Mx)
@@ -385,7 +385,7 @@ module sse_support
         else
             He_GB_age = Tinf2 - (1.d0/((q-1.d0)*AHe*B))*(mc**(1.d0-q))
         endif
-        print*, 'FUNCTION He_GB_age executed' ! Poornima
+        !print*, 'FUNCTION He_GB_age executed' ! Poornima
     end
 
     real(dp) FUNCTION lmcgbf(mc,D,Mx)
@@ -398,7 +398,7 @@ module sse_support
         else
          lmcgbf = B*(mc**q)
         endif
-        print*, 'FUNCTION lmcgbf executed' ! Poornima
+        !print*, 'FUNCTION lmcgbf executed' ! Poornima
       return
     end
     

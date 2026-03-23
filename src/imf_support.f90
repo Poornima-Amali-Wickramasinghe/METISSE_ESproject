@@ -17,7 +17,7 @@ module imf_support
     do i= 1,n
         marray(i) = mmin + (i-1)*h
     end do
-    print*, 'subroutine sample_uniform executed' ! Poornima
+    !print*, 'subroutine sample_uniform executed' ! Poornima
   end subroutine sample_uniform
     
 !  subroutine sample_uniform_log()
@@ -57,7 +57,7 @@ module imf_support
        end if
     end do
 
-    print*, 'subroutine sample_kroupa_imf executed' ! Poornima
+    !print*, 'subroutine sample_kroupa_imf executed' ! Poornima
   end subroutine sample_kroupa_imf
 
 end module imf_support

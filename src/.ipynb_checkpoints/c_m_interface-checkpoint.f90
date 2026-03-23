@@ -139,7 +139,7 @@ contains
         py_c12_mass_frac_H = c12_col
         py_o16_mass_frac_H = o16_col
 
-        print*, 'subroutine set_format_controls_H executed' ! Poornima
+        !print*, 'subroutine set_format_controls_H executed' ! Poornima
     end subroutine set_format_controls_H
 
     ! --------------------------
@@ -188,7 +188,7 @@ contains
         py_c12_mass_frac_He = c12_col
         py_o16_mass_frac_He = o16_col
 
-        print*, 'subroutine set_format_controls_He executed' ! Poornima
+        !print*, 'subroutine set_format_controls_He executed' ! Poornima
     end subroutine set_format_controls_He
 
     ! --------------------------
@@ -218,7 +218,7 @@ contains
         allocate(py_track_list_he(nhe_track))
         py_track_list_he = he_tracks
 
-        print*, 'subroutine set_file_lists executed' ! Poornima
+        !print*, 'subroutine set_file_lists executed' ! Poornima
     end subroutine set_file_lists
 
     subroutine set_mets(nmet, Z_values, nmet_he, Z_values_he)
@@ -328,7 +328,7 @@ contains
             endif
         end if
 
-        print*, 'subroutine set_tracks_from_python executed' ! Poornima
+        !print*, 'subroutine set_tracks_from_python executed' ! Poornima
 
     end subroutine set_tracks_from_python
 

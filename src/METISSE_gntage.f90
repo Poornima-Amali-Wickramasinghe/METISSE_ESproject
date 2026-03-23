@@ -159,7 +159,7 @@ subroutine METISSE_gntage(mc,mt,kw,zpars,m0,aj,id)
     
     if (debug)write(*,*)'exit gntage',kw,m0,mt,mc,aj
 
-    print*, 'subroutine METISSE_gntage executed' ! Poornima
+    !print*, 'subroutine METISSE_gntage executed' ! Poornima
 
 end subroutine METISSE_gntage
 

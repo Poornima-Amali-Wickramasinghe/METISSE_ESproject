@@ -154,7 +154,7 @@ subroutine evolv_metisse(mass, max_age, ierr, id)
     nullify(t)
     if (verbose) write(*,*) "-------------------------------------------------------------------------"
 
-    print*, 'subroutine evolv_metisse executed' ! Poornima
+    !print*, 'subroutine evolv_metisse executed' ! Poornima
     return
 end subroutine evolv_metisse
 

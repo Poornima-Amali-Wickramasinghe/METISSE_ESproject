@@ -46,7 +46,7 @@ subroutine assign_commons_main()
         print*,'METISSE error: Front end mismtach in assign_commons_main'
         print*,'expected 0 (main); got ', front_end
     endif
-    print*, 'subroutine assign_commons_main executed' ! Poornima
+    !print*, 'subroutine assign_commons_main executed' ! Poornima
 
     end subroutine
 

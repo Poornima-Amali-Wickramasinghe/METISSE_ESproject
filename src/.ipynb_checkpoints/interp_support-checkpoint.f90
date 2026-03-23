@@ -167,7 +167,7 @@ module interp_support
         endif
         
         nullify(a, s)
-        print*, 'subroutine interpolate_mass executed' ! Poornima
+        !print*, 'subroutine interpolate_mass executed' ! Poornima
     end subroutine interpolate_mass
 
     subroutine findtracks_for_interpolation(mass, is_he_track, bounds, min_index, keyword, iseg)
@@ -272,7 +272,7 @@ module interp_support
 
 		deallocate(mass_list, cutoff)
         nullify(s)
-        print*, 'subroutine findtracks_for_interpolation executed' ! Poornima
+        !print*, 'subroutine findtracks_for_interpolation executed' ! Poornima
     end subroutine findtracks_for_interpolation
 
     subroutine write_header(b, a)
@@ -297,7 +297,7 @@ module interp_support
         b% has_mass_loss = a% has_mass_loss
         b% is_he_track = a% is_he_track
 
-        print*, 'subroutine write_header executed' ! Poornima
+        !print*, 'subroutine write_header executed' ! Poornima
     end subroutine
 
     subroutine check_length(iseg, t, min_index, exclude_core)
@@ -413,7 +413,7 @@ module interp_support
             nullify(s)
             
         endif
-        print*, 'subroutine check_length executed' ! Poornima
+        !print*, 'subroutine check_length executed' ! Poornima
     end subroutine check_length
     
     subroutine fix_incomplete_tracks(a, t, min_ntrack, exclude_core)
@@ -482,7 +482,7 @@ module interp_support
             enddo
         end if
         deallocate(excl_cols)
-        print*, 'subroutine fix_incomplete_tracks executed' ! Poornima        
+        !print*, 'subroutine fix_incomplete_tracks executed' ! Poornima        
     end subroutine fix_incomplete_tracks
 
     subroutine smooth_track(t, start)
@@ -504,7 +504,7 @@ module interp_support
             endif
         end do
         nullify(mass_list)
-        print*, 'subroutine smooth_track executed' ! Poornima
+        !print*, 'subroutine smooth_track executed' ! Poornima
     end subroutine smooth_track
     
     subroutine mod_PAV(y)
@@ -560,7 +560,7 @@ module interp_support
         end do
         
         deallocate(d)
-        print*, 'subroutine mod_PAV executed' ! Poornima
+        !print*, 'subroutine mod_PAV executed' ! Poornima
     end subroutine mod_PAV
   
     integer function locate(y)
@@ -605,7 +605,7 @@ module interp_support
         end select
 !        print*, "in interp2", input_age, age2, frac, phase
         get_secondary_age = age2
-        print*, 'function get_secondary_age executed' ! Poornima
+        !print*, 'function get_secondary_age executed' ! Poornima
     end function
                     
     subroutine interpolate_age(t, input_age, icolumn, val)
@@ -741,7 +741,7 @@ module interp_support
 !            call stop_code(err_unit)
         endif
         if (debug_age) print*, 'exiting interpolate_age'
-        print*, 'subroutine interpolate_age executed' ! Poornima
+        !print*, 'subroutine interpolate_age executed' ! Poornima
     end subroutine interpolate_age
     
     logical function check_core_quant(j, is_he_track)
@@ -763,7 +763,7 @@ module interp_support
         
         deallocate(excl_cols)
 !        print*, 'core quant',j, pass, check_core_quant
-        print*, 'function check_core_quant executed' ! Poornima
+        !print*, 'function check_core_quant executed' ! Poornima
     end function check_core_quant
 
 
@@ -852,7 +852,7 @@ module interp_support
         if(.not.allocated(nbr_eeps)) then
             write(UNIT = err_unit, fmt=*)'METISSE error: Cannot find neighboring eeps for age:',age, age_col
         endif
-        print*, 'subroutine find_neighboring_eeps executed' ! Poornima
+        !print*, 'subroutine find_neighboring_eeps executed' ! Poornima
     end subroutine find_neighboring_eeps
     
     subroutine save_values(new_line, pars)
@@ -907,7 +907,7 @@ module interp_support
                 pars% binding_energy = 0.00
             endif
         endif
-        print*, 'subroutine save_values executed' ! Poornima    
+        !print*, 'subroutine save_values executed' ! Poornima    
     end subroutine
                     
                     
@@ -968,7 +968,7 @@ module interp_support
                     
 
         nullify(age)
-        print*, 'subroutine calculate_timescales executed' ! Poornima
+        !print*, 'subroutine calculate_timescales executed' ! Poornima
     end subroutine calculate_timescales
     
     subroutine calculate_he_timescales(t)
@@ -1028,7 +1028,7 @@ module interp_support
         endif
         
         nullify(age)
-        print*, 'subroutine calculate_he_timescales executed' ! Poornima
+        !print*, 'subroutine calculate_he_timescales executed' ! Poornima
     end subroutine calculate_he_timescales
     
     !from MESA-r7503/1d_interp/
@@ -1058,7 +1058,7 @@ module interp_support
         a(1) = yp2
         a(2) = (3*s2-2*yp2-yp3)/h2
         a(3) = (yp2+yp3-2*s2)/(h2*h2)
-        print*, 'subroutine interp_4pt_pm executed' ! Poornima
+        !print*, 'subroutine interp_4pt_pm executed' ! Poornima
     end subroutine interp_4pt_pm
     
     integer function eqv_eep(EEP2, EEP1, EEP_OLD2, EEP_OLD1, m)
@@ -1067,7 +1067,7 @@ module interp_support
 
         frac = (M-EEP1)* 1.d0 /(EEP2-EEP1)
         eqv_eep = nint(EEP_OLD1+(frac*1.d0 *(EEP_OLD2-EEP_OLD1)))
-        print*, 'function eqv_eep executed' ! Poornima
+        !print*, 'function eqv_eep executed' ! Poornima
     end function
     
     subroutine get_initial_mass_for_new_track(t, id, mnew, eep_m)
@@ -1287,7 +1287,7 @@ module interp_support
         nullify(s)
         deallocate(Mmax, Mmin)
         if (allocated(mlist)) deallocate(mlist)
-        print*, 'subroutine get_initial_mass_for_new_track executed' ! Poornima
+        !print*, 'subroutine get_initial_mass_for_new_track executed' ! Poornima
     end subroutine get_initial_mass_for_new_track
     
     

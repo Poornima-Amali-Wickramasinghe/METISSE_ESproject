@@ -36,14 +36,14 @@ subroutine initialize_front_end(front_end_name)
         print*, "METISSE error: Unrecongnized front_end_name for METISSE"
         print*, "Choose from 'MAIN', 'SSE', 'BSE', 'COSMIC' "
     endif
-    print*, 'subroutine initialize_front_end executed' ! Poornima
+    !print*, 'subroutine initialize_front_end executed' ! Poornima
 end subroutine initialize_front_end
 
 subroutine set_file_mode(i)
     use track_support, only: mode
     integer, intent(in) :: i
     mode = i
-    print*, 'subroutine set_file_mode started' ! Poornima
+    !print*, 'subroutine set_file_mode started' ! Poornima
 end subroutine
 
 subroutine allocate_track(n,mass)
@@ -64,7 +64,7 @@ subroutine allocate_track(n,mass)
     tarr% pars% dms = 0.d0
     tarr% pars% delta = 0.d0
     tarr% reju = .false.
-    print*, 'subroutine allocate_track executed' ! Poornima
+    !print*, 'subroutine allocate_track executed' ! Poornima
 end subroutine allocate_track
 
 
@@ -88,7 +88,7 @@ subroutine dealloc_track()
     
     deallocate(tarr)
 
-    print*, 'subroutine dealloc_track executed' ! Poornima
+    !print*, 'subroutine dealloc_track executed' ! Poornima
 end subroutine dealloc_track
 
 
@@ -103,6 +103,6 @@ subroutine set_star_type(id)
         tarr(id)% star_type = rejuvenated
         tarr(id)% reju = .true.
 
-        print*, 'subroutine set_star_type executed' ! Poornima
+        !print*, 'subroutine set_star_type executed' ! Poornima
 end subroutine set_star_type
 

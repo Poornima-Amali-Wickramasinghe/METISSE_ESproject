@@ -82,7 +82,7 @@ module z_support
             
         close(io)
         call free_iounit(io)
-        print*, 'subroutine read_main_input executed' ! Poornima
+        !print*, 'subroutine read_main_input executed' ! Poornima
     end subroutine
 
     subroutine read_metisse_input(infile,ierr)
@@ -101,7 +101,7 @@ module z_support
             read(unit = io, nml = METISSE_input_controls)
         close(io)
         call free_iounit(io)
-        print*, 'subroutine read_metisse_input executed' ! Poornima
+        !print*, 'subroutine read_metisse_input executed' ! Poornima
     end subroutine read_metisse_input
     
     subroutine get_test_inputs()
@@ -115,7 +115,7 @@ module z_support
         METALLICITY_DIR = '/home/runner/data/sample_tracks_solarZ/Hydrogen/'
         METALLICITY_DIR_HE = '/home/runner/data/sample_tracks_solarZ/Helium/'
         verbose = .true.
-        print*, 'subroutine get_test_inputs executed' ! Poornima
+        !print*, 'subroutine get_test_inputs executed' ! Poornima
         
 
     end subroutine
@@ -144,7 +144,7 @@ module z_support
         file_list = pack(file_list,mask=len_trim(file_list)>0)
 
         deallocate(temp_list)
-        print*, 'subroutine get_metallicity_file_list executed' ! Poornima
+        !print*, 'subroutine get_metallicity_file_list executed' ! Poornima
     end subroutine
     
     subroutine get_metallicity_list(file_list,Z_list)
@@ -168,7 +168,7 @@ module z_support
                 endif
             endif
         end do
-        print*, 'subroutine get_metallicity_list executed' ! Poornima    
+        !print*, 'subroutine get_metallicity_list executed' ! Poornima    
     end subroutine get_metallicity_list
     
     subroutine get_metallcity_file_from_Z(file_list,Z_list,initial_Z,ierr)
@@ -202,7 +202,7 @@ module z_support
             ierr = 1
         endif
 
-        print*, 'subroutine get_metallicity_file_from_Z executed' ! Poornima
+        !print*, 'subroutine get_metallicity_file_from_Z executed' ! Poornima
      
     end subroutine get_metallcity_file_from_Z
     
@@ -225,7 +225,7 @@ module z_support
             read(io, nml = metallicity_controls)
         close(io)
         call free_iounit(io)
-        print*, 'subroutine read_metallicity_file executed' ! Poornima
+        !print*, 'subroutine read_metallicity_file executed' ! Poornima
     end subroutine read_metallicity_file
     
     subroutine read_format(USE_DIR,filename,ierr)
@@ -257,7 +257,7 @@ module z_support
             read(unit = io, nml = format_controls)
         close(io)
         call free_iounit(io)
-        print*, 'subroutine read_format executed' ! Poornima
+        !print*, 'subroutine read_format executed' ! Poornima
 
     end subroutine read_format
 
@@ -309,7 +309,7 @@ module z_support
         close(io)
         call free_iounit(io)
 
-        print*, 'subroutine get_files_from_path executed' ! Poornima
+        !print*, 'subroutine get_files_from_path executed' ! Poornima
     end subroutine get_files_from_path
 
     subroutine get_csafe_string(cstring, fstring)
@@ -324,7 +324,7 @@ module z_support
             fstring = trim(cstring)
         endif
 
-        print*, 'subroutine get_csafe_string executed' ! Poornima
+        !print*, 'subroutine get_csafe_string executed' ! Poornima
     end subroutine
     
     subroutine read_MIST_track(x)
@@ -398,7 +398,7 @@ module z_support
         close(io)
         call free_iounit(io)
 
-        print*, 'subroutine read_MIST_track executed' ! Poornima
+        !print*, 'subroutine read_MIST_track executed' ! Poornima
     
     end subroutine read_MIST_track
     
@@ -504,7 +504,7 @@ module z_support
 
         if (debug) print*,x% initial_mass, x% initial_Z, x% ncol
 
-        print*, 'subroutine read_other_track executed' ! Poornima
+        !print*, 'subroutine read_other_track executed' ! Poornima
     end subroutine read_other_track
 
     !from C.Flynn's driver routine
@@ -522,7 +522,7 @@ module z_support
             line = adjustl(line(iblankpos:))
         end do
 
-        print*, 'subroutine split executed' ! Poornima
+        !print*, 'subroutine split executed' ! Poornima
     end subroutine split
 
     !locating essential columns here
@@ -601,7 +601,7 @@ module z_support
         
         get_cols = .false.
 
-        print*, 'subroutine get_named_columns executed' ! Poornima
+        !print*, 'subroutine get_named_columns executed' ! Poornima
     end subroutine get_named_columns
 
 
@@ -635,7 +635,7 @@ module z_support
             if(essential1) code_error = .true.
         endif
 
-        print*, 'function locate_column executed' ! Poornima
+        !print*, 'function locate_column executed' ! Poornima
         
     end function locate_column
       
@@ -646,7 +646,7 @@ module z_support
         x% tr(itemp,:) = log10(x% tr(itemp,:))
         x% cols(itemp)% name = "log("//trim(x% cols(itemp)% name)//")"
 
-        print*, 'subroutine make_logcolumn executed' ! Poornima
+        !print*, 'subroutine make_logcolumn executed' ! Poornima
     end subroutine make_logcolumn
 
     subroutine set_key_columns(cols,ncol,is_he_track)
@@ -696,7 +696,7 @@ module z_support
         i_age = n
         if(is_he_track) i_he_age = n
         deallocate(temp)
-        print*, 'subroutine set_key_columns executed' ! Poornima
+        !print*, 'subroutine set_key_columns executed' ! Poornima
     end subroutine set_key_columns
 
     subroutine assign_sgl_col(temp, col, colname,n)
@@ -709,7 +709,7 @@ module z_support
         col = n
         n = n+1
 
-        print*, 'subroutine assign_sgl_col executed' ! Poornima
+        !print*, 'subroutine assign_sgl_col executed' ! Poornima
     end subroutine
     
     subroutine check_for_extra_columns(cols,temp,n)
@@ -745,7 +745,7 @@ module z_support
             endif
         endif
 
-        print*, 'subroutine check_for_extra_columns executed' ! Poornima
+        !print*, 'subroutine check_for_extra_columns executed' ! Poornima
 
     end subroutine check_for_extra_columns
 
@@ -833,7 +833,7 @@ module z_support
         call free_iounit(io)
         if(debug) write(*,*) 'process_columns: ncol = ', ncol
 
-        print*, 'subroutine process_columns executed' ! Poornima
+        !print*, 'subroutine process_columns executed' ! Poornima
 
       end subroutine process_columns
 
@@ -900,7 +900,7 @@ module z_support
         if(high_mass_final_eep<0 .or. high_mass_final_eep>final_eep) high_mass_final_eep = final_eep
 !        print*, 'eep main', Initial_EEP, final_eep, low_mass_final_eep, high_mass_final_eep
         
-        print*, 'subroutine read_key_eeps executed' ! Poornima
+        !print*, 'subroutine read_key_eeps executed' ! Poornima
     end subroutine
 
     subroutine read_key_eeps_he()
@@ -953,7 +953,7 @@ module z_support
         
 !        print*, 'eep he', Initial_EEP_he, final_eep_he, low_mass_eep_he, high_mass_eep_he
 
-        print*, 'subroutine read_key_eeps_he executed' ! Poornima
+        !print*, 'subroutine read_key_eeps_he executed' ! Poornima
     end subroutine read_key_eeps_he
      
     logical function add_eep(temp, i)
@@ -965,7 +965,7 @@ module z_support
             add_eep = .true.
             if (Final_EEP>0 .and. temp(i)> Final_EEP) add_eep = .false.
         endif
-        print*, 'function add_eep executed' ! Poornima
+        !print*, 'function add_eep executed' ! Poornima
     end function
 
     
@@ -1038,7 +1038,7 @@ module z_support
         endif
     endif
 
-    print*, 'subroutine set_star_type_from_history executed' ! Poornima
+    !print*, 'subroutine set_star_type_from_history executed' ! Poornima
 
     end subroutine set_star_type_from_history
 
@@ -1051,7 +1051,7 @@ module z_support
             if(label==star_label(i)) x% star_type = i
         enddo
 
-        print*, 'subroutine set_star_type_from_label executed' ! Poornima
+        !print*, 'subroutine set_star_type_from_label executed' ! Poornima
     end subroutine set_star_type_from_label
 
     subroutine check_tracks(num_tracks)
@@ -1145,7 +1145,7 @@ module z_support
         
         num_tracks = count(xa% complete)
 
-        print*, 'subroutine check_tracks executed' ! Poornima
+        !print*, 'subroutine check_tracks executed' ! Poornima
     end subroutine check_tracks
         
         
@@ -1220,7 +1220,7 @@ module z_support
         deallocate(xa)
         deallocate(key_cols)
 
-        print*, 'subroutine copy_and_deallocatex executed' ! Poornima
+        !print*, 'subroutine copy_and_deallocatex executed' ! Poornima
     end subroutine
 
     logical function check_mass_loss(x)
@@ -1234,7 +1234,7 @@ module z_support
             check_mass_loss = .true.
         endif
 
-        print*, 'function check_mass_loss executed' ! Poornima
+        !print*, 'function check_mass_loss executed' ! Poornima
     end function
     
     subroutine sort_minitial()
@@ -1264,7 +1264,7 @@ module z_support
         end do
         
         deallocate(list,d)
-        print*, 'subroutine sort_minitial executed' ! Poornima
+        !print*, 'subroutine sort_minitial executed' ! Poornima
     end subroutine sort_minitial
     
     subroutine get_minmax(is_he_track,Mmax,Mmin)
@@ -1298,7 +1298,7 @@ module z_support
         
         nullify(x)
 
-        print*, 'subroutine get_minmax executed' ! Poornima
+        !print*, 'subroutine get_minmax executed' ! Poornima
     end subroutine get_minmax
 
     subroutine set_zparameters(num_tracks,zpars)
@@ -1529,7 +1529,7 @@ module z_support
         
         deallocate(mass_list)
 
-        print*, 'subroutine set_zparameters executed' ! Poornima
+        !print*, 'subroutine set_zparameters executed' ! Poornima
 
     end subroutine set_zparameters
 
@@ -1635,7 +1635,7 @@ module z_support
 
         deallocate(mass_list)
 
-        print*, 'subroutine set_zparameters_he executed' ! Poornima
+        !print*, 'subroutine set_zparameters_he executed' ! Poornima
     end subroutine set_zparameters_he
     
     subroutine sort_mcutoff(m_cutoff)
@@ -1669,7 +1669,7 @@ module z_support
         m_cutoff = pack(m_cutoff,mask = m_cutoff .ne. 0)
         deallocate(mloc)
 
-        print*, 'subroutine sort_mcutoff executed' ! Poornima
+        !print*, 'subroutine sort_mcutoff executed' ! Poornima
     end subroutine sort_mcutoff
 
     !ZPARS
@@ -1703,7 +1703,7 @@ module z_support
         !* set constant for low-mass CHeB stars
         zpars(14) = z**0.4d0
 
-        print*, 'subroutine calculate_sse_zpars executed' ! Poornima
+        !print*, 'subroutine calculate_sse_zpars executed' ! Poornima
 
     end subroutine
 
@@ -1780,7 +1780,7 @@ module z_support
             o16_mass_frac = py_o16_mass_frac_He
         end if
 
-        print*, 'subroutine apply_cosmic_format_controls executed' ! Poornima
+        !print*, 'subroutine apply_cosmic_format_controls executed' ! Poornima
 
     end subroutine apply_cosmic_format_controls
 
@@ -1892,7 +1892,7 @@ module z_support
             offset = offset + ntrack_arr(i)
         end do  
 
-        print*, 'subroutine set_tracks_from_python_inputs executed' ! Poornima
+        !print*, 'subroutine set_tracks_from_python_inputs executed' ! Poornima
 
     end subroutine set_tracks_from_python_inputs
     
@@ -1921,7 +1921,7 @@ module z_support
         call system(cmd,ierr)
         if (ierr/=0) return
 
-        print*, 'subroutine check_folder executed' ! Poornima
+        !print*, 'subroutine check_folder executed' ! Poornima
     end subroutine
 
 

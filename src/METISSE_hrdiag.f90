@@ -287,5 +287,5 @@
     
     nullify(t)
 
-    print*, 'subroutine METISSE_hrdiag executed' ! Poornima
+    !print*, 'subroutine METISSE_hrdiag executed' ! Poornima
     end subroutine METISSE_hrdiag

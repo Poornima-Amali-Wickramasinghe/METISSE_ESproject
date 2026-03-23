@@ -41,7 +41,7 @@
             t% ierr = -1
 !                    call stop_code
         endif
-        print*, 'subroutine check_early_end executed' ! Poornima    
+        !print*, 'subroutine check_early_end executed' ! Poornima    
     end subroutine check_early_end
             
     
@@ -88,7 +88,7 @@
         endif
         if (debug_rem .and. pars% phase>9) print*,"Assigned remnant phase ", phase_label(pars% phase+1)
 
-        print*, 'subroutine assign_remnant_METISSE executed' ! Poornima
+        !print*, 'subroutine assign_remnant_METISSE executed' ! Poornima
     
     end subroutine assign_remnant_METISSE
 
@@ -111,7 +111,7 @@
         call evolve_after_agb(t)
         if (debug_rem) print*, "In post-agb phase, mass = ", t% pars% mass
         
-        print*, 'subroutine post_agb_parameters executed' ! Poornima
+        !print*, 'subroutine post_agb_parameters executed' ! Poornima
     end subroutine post_agb_parameters
 
     subroutine evolve_after_agb(t)
@@ -161,7 +161,7 @@
             t% zams_mass = t% pars% mass
         endif
 
-        print*, 'subroutine evolve_after_agb executed' ! Poornima
+        !print*, 'subroutine evolve_after_agb executed' ! Poornima
     end subroutine
 
     subroutine initialize_white_dwarf(pars)
@@ -175,7 +175,7 @@
 
         call evolve_white_dwarf(pars)
         if (debug_rem) print*, phase_label(pars% phase+1), ", mass =", pars% mass
-        print*, 'subroutine initialize_white_dwarf executed' ! Poornima
+        !print*, 'subroutine initialize_white_dwarf executed' ! Poornima
     end subroutine
 
     subroutine check_IFMR(mass, mc)
@@ -192,7 +192,7 @@
              mc= MAX(0.54+0.073*mass,mc)
           endif
           mc= MIN(M_ch,mc)
-          print*, 'subroutine check_IFMR executed' ! Poornima
+          !print*, 'subroutine check_IFMR executed' ! Poornima
     end subroutine
 
     subroutine check_ns_bh(pars)
@@ -215,7 +215,7 @@
 
         endif
         if (debug_rem) print*, "NS/BH mass from ", trim(BHNS_mass_scheme)," scheme = ",pars% mass
-         print*, 'subroutine check_ns_bh executed' ! Poornima
+         !print*, 'subroutine check_ns_bh executed' ! Poornima
     end subroutine
 
     real(dp) function calculate_NSBH_mass(Mc,Mt) result(Mrem)
@@ -260,7 +260,7 @@
                 !Use the original SSE NS/BH mass.
                 Mrem = 1.17d0 + 0.09d0*Mc
         end select
-         print*, 'function calculate_NSBH_mass executed' ! Poornima
+         !print*, 'function calculate_NSBH_mass executed' ! Poornima
     end function
 
     real(dp) function calculate_remnant_mass(mc,mcfeni,Mt) result (Mrem)
@@ -275,7 +275,7 @@
         else
             Mrem = Mt
         endif
-        print*, 'function calculate_remnant_mass executed' ! Poornima
+        !print*, 'function calculate_remnant_mass executed' ! Poornima
     end function calculate_remnant_mass
 
     real(dp) function calculate_gravitational_mass(mass,phase)
@@ -289,7 +289,7 @@
             mt = mass
         endif
         calculate_gravitational_mass = mt
-        print*, 'function calculate_gravitational_mass executed' ! Poornima
+        !print*, 'function calculate_gravitational_mass executed' ! Poornima
     end function
     
     subroutine evolve_remnants_METISSE(pars)
@@ -305,7 +305,7 @@
         case(Massless_Rem)
             call initialize_massless_rem(pars)
         end select
-        print*, 'subroutine evolve_remnants_METISSE executed' ! Poornima
+        !print*, 'subroutine evolve_remnants_METISSE executed' ! Poornima
     end subroutine
             
     subroutine evolve_white_dwarf(pars)
@@ -340,7 +340,7 @@
             if(pars% mass < 0.0005) pars% radius= MIN(pars% radius,0.01d0)
             if (debug) print*, "Evolving WD", pars% mass, pars% luminosity, pars% radius
         endif
-        print*, 'subroutine evolve_white_dwarf executed' ! Poornima
+        !print*, 'subroutine evolve_white_dwarf executed' ! Poornima
     end subroutine
 
     real(dp) function calculate_wd_lum(mass,age,xx) result(lum)
@@ -362,7 +362,7 @@
         !tmin= ((635.d0*pars% mass*Z04/lum)**(1.0/1.4))/xx
         !lum = (635.d0*mass*(Z04))/((xx*tmin)**1.4)
         !if (t% post_agb) lum = min(lum,t% agb% lum)
-        print*, 'function calculate_wd_lum executed' ! Poornima
+        !print*, 'function calculate_wd_lum executed' ! Poornima
     end function
 
     real(dp) function calculate_wd_radius(mass) result(radius)
@@ -371,7 +371,7 @@
         radius = max(1.4d-5,0.0115*radius)
         !radius  = 0.0115*SQRT(MAX(1.48204d-06,(M_ch/mass)**pow-(mass/M_ch)**pow))
         radius = MIN(0.1d0,radius )
-        print*, 'function calculate_wd_radius executed' ! Poornima
+        !print*, 'function calculate_wd_radius executed' ! Poornima
     end function
 
     subroutine evolve_neutron_star(pars)
@@ -391,7 +391,7 @@
         endif
         
         !print*,"I am in evolve_neutron_star"
-        print*, 'subroutine evolve_neutron_star executed' ! Poornima
+        !print*, 'subroutine evolve_neutron_star executed' ! Poornima
     end subroutine
 
     subroutine evolve_black_hole(pars)
@@ -404,7 +404,7 @@
         !pars% McCO = 0.0
         !pars% McHe = 0.0
 
-        print*, 'subroutine evolve_black_hole executed' ! Poornima
+        !print*, 'subroutine evolve_black_hole executed' ! Poornima
 
     end subroutine
 
@@ -419,7 +419,7 @@
         pars% McCO = 0.d0
         pars% McHe = 0.d0
 
-        print*, 'subroutine initialize_massless_rem executed' ! Poornima
+        !print*, 'subroutine initialize_massless_rem executed' ! Poornima
     end subroutine
 
     subroutine initialize_ECSNe(pars)
@@ -430,7 +430,7 @@
         pars% core_mass= pars% mass
         pars% luminosity = 0.02*(pars% mass**0.67)/(MAX(pars% age,0.1d0))**2
         pars% radius= 1.4d-05
-        print*, 'subroutine initialize_ECSNe executed' ! Poornima
+        !print*, 'subroutine initialize_ECSNe executed' ! Poornima
     end subroutine
     
     subroutine initialize_SSE_helium_star(t,HeI_time)
@@ -447,7 +447,7 @@
                             t% times(9),t% He_pars% D, t% He_pars% Mx)
             t% pars% age = MAX(t% pars% age,t% MS_time)
         endif
-        print*, 'subroutine initialize_SSE_helium_star executed' ! Poornima
+        !print*, 'subroutine initialize_SSE_helium_star executed' ! Poornima
     end subroutine
     
     
@@ -496,7 +496,7 @@
                 t% pars% core_mass = t% pars% mass
                 
         end select
-        print*, 'subroutine assign_stripped_star_phase executed' ! Poornima
+        !print*, 'subroutine assign_stripped_star_phase executed' ! Poornima
     end subroutine
 
     subroutine evolve_after_envelope_loss(t,McHeI)
@@ -546,7 +546,7 @@
     if (debug) print*,"End: Phase",t% pars% phase ," core mass",t% pars% core_mass
 !        print*,"lum", t% pars% luminosity, "rad", t% pars% radius
 
-    print*, 'subroutine evolve_after_envelope_loss executed' ! Poornima
+    !print*, 'subroutine evolve_after_envelope_loss executed' ! Poornima
     end subroutine evolve_after_envelope_loss
 
 
@@ -556,7 +556,7 @@
         x = log10(Z)
         !y = 10**(-0.1*x*x-0.46*x-5.1)
         fit_Z_t1 = 10**(-0.136*x*x-1.117*x-6.256)
-        print*, 'function fit_Z_t1 executed' ! Poornima
+        !print*, 'function fit_Z_t1 executed' ! Poornima
         return
     end function
 
@@ -614,7 +614,7 @@
          end select
         rc = MIN(rc,t% pars% radius)
 
-        print*, 'subroutine calculate_rc executed' ! Poornima
+        !print*, 'subroutine calculate_rc executed' ! Poornima
     end subroutine calculate_rc
 
     subroutine calculate_rg(t,rg)
@@ -684,7 +684,7 @@
                 ENDIF
         end select
 
-        print*, 'subroutine calculate_rg executed' ! Poornima
+        !print*, 'subroutine calculate_rg executed' ! Poornima
     end subroutine calculate_rg
     
     subroutine get_mcrenv_from_cols(t,lums,menv,renv,k2)
@@ -753,7 +753,7 @@
         
         k2 = 0.1d0
 
-        print*, 'subroutine get_mcrenv_from_cols executed' ! Poornima
+        !print*, 'subroutine get_mcrenv_from_cols executed' ! Poornima
     
     end subroutine
 
