@@ -1,0 +1,5 @@
+&METISSE_input_controls
+    metallicity_dir = '/home/poornima/Documents/my_METISSE_project/sample_tracks_solarZ/Hydrogen/'
+    metallicity_dir_he = '/home/poornima/Documents/my_METISSE_project/sample_tracks_solarZ/Helium/'
+/
+ 

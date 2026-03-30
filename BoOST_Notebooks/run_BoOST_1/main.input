@@ -1,8 +1,8 @@
 &SSE_input_controls
-    initial_Z = 0.02
+    initial_Z = 0.008
     max_age = 20000.0
     number_of_tracks = 1
-    min_mass = 20.0
+    min_mass = 50.0
     write_output_to_file = .true.
 /
  
